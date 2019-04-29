@@ -1,0 +1,23 @@
+body{ background-color:black;
+	}
+
+div pre{
+	
+	font-family:"arial";
+	background-color:gray;
+	border:2px solid white;
+	padding:20px;
+	margin:10px;
+	
+	width:500px;
+	text-align:center;
+	
+	
+}
+div pre input{
+	padding:5px;
+	margin:10px;
+	text-align:left;
+	margin-left:20px;
+
+}

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:a="http://xmlns.jcp.org/jsf/passthrough" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<style type="text/css">
+	body{ background-image:url("images/piyano2.jpg" ) ;
+	position:relative;
+	width:650px; 
+	
+	}
+	h1{ color:#0000f5;
+		
+		text-align:center;
+	}
+	p{ color:red;
+		font-weight:bold;
+		font-family:tahoma;
+		font-style:italic;
+		border:5px solid red;
+		padding:5px;
+		position:absolute;
+		
+	}
+	#menu {
+  overflow: hidden;
+  background-color: #cc6666;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+	#menu ul {
+ margin: 0px;
+ padding: 0px;
+ list-style-type: none;
+ 
+}
+ #menu ul li a {
+ float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+#menu ul li a:hover {
+  background: #51dbdb;
+}
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+* {
+    box-sizing: border-box;
+}
+form.example button {
+    float: left;
+    width: 70px;
+	height:42px;
+    background: #cc6666;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+form.example button:hover {
+    background: #51dbdb;
+}
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+   width: 400px;
+    background: #f1f1f1;
+	}
+	.innerTable{
+		border: 5px solid white;
+	
+	}
+	a:link{
+		text-decoration:none; color:#00BFFF;
+		font-size:20px;
+	}
+	a:visited{text-decoration:none;color:chartreuse;font-size:20px;}
+	a:hover{text-decoration:none;color:cyan;font-size:20px;}
+	a:active{text-decoration:none;color:darkOrange;font-size:20px;}
+	</style>
+        
+<title>anasayfa</title></h:head>
+
+<h:body>
+<div id="menu">
+<ul>
+<li><a href="anasayfa.xhtml">Anasayfa</a></li>
+<li><a href="muziklerim.xhtml">Müziklerim</a></li>
+<li><a href="radio.html">Radyo</a></li>
+<li><a href="profil.xhtml">Profil</a></li>
+<li><a href="iletisim.xhtml">İletişim</a></li>
+<li><a href="hakkinda.html">Hakkında</a></li>
+</ul>
+     
+</div><br /><br /><br />
+
+<h:form>
+    <table>
+        <tr>
+            <td>
+
+    <h:dataTable value="#{membersBean.HitListele()}" 
+                 var="muzik"  style="color: white" class="innerTable" width="500px">
+        <f:facet name="header">En Çok Dinlenenler</f:facet>
+        <h:column>
+            <f:facet name="header"><div align="left">ADI
+  </div></f:facet>
+            <h:outputText value="#{muzik.NAME}"/>
+        </h:column>
+         <h:column>
+             <f:facet name="header"> <div align="left">ARTIST</div></f:facet>
+             <h:outputText value="#{muzik.ARTIST}"/>
+           
+        </h:column>
+        <h:column>
+            <f:facet name="header"></f:facet>
+            <h:commandButton value="Müziklere Ekle" action="#{membersBean.AddToUserLikes()}">
+                <f:param name="name" value="#{muzik.NAME}"/>
+            </h:commandButton>
+        </h:column>
+    </h:dataTable>	
+                
+            </td>
+            <td>
+                <h:dataTable value="#{membersBean.KisiselListele()}" var="kisi" style="color: white" class="innerTable" width="400px">
+                
+                      <f:facet name="header">MÜZİKLERİM</f:facet>
+                    
+                <h:column>
+                      <f:facet name="header"><div align="left">ADI
+                </div></f:facet>
+                       <h:outputText value="#{kisi.MUSICNAME}"/>
+                </h:column>
+                        <h:column>
+            <f:facet name="header"></f:facet>
+            <h:commandButton value="Müziklerden Sil" action="#{membersBean.DelToUserLikes()}">
+                <f:param name="name2" value="#{kisi.MUSICNAME}"/>
+            </h:commandButton>
+            </h:column>
+                </h:dataTable>
+    
+    
+    
+ 
+                </td>
+            <td>
+                 <h:dataTable value="#{membersBean.SanatciListele()}" var="sanatci" style="color: white" class="innerTable" width="500px">
+                
+                      <f:facet name="header">Sanatcilar</f:facet>
+                    
+                <h:column>
+                      <f:facet name="header"><div align="left">ADI
+                </div></f:facet>
+                       <h:outputText value="#{sanatci.ARTIST}"/>
+                </h:column>
+                       
+                </h:dataTable>
+            </td>
+        </tr>
+    </table>
+</h:form>
+</h:body>
+</html>

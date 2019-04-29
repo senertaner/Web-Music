@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+<title>üye girişi</title>
+	<style type="text/css">
+	body{ background-image:url("images/piyano2.jpg")
+	}
+	h1{ color:#0000f5;
+		
+		text-align:center;
+	}
+	p{ color:red;
+		font-weight:bold;
+		font-family:tahoma;
+		font-style:italic;
+		font-size:20px;
+		text-align:center;
+	}
+	.login {
+
+width:190px;
+margin:auto;
+border:1px #CCC solid;
+padding:10px;
+}
+
+.login_input {
+padding:5px;
+margin:5px
+}
+a:link{
+		text-decoration:none; color:#00BFFF;
+	}
+	a:visited{text-decoration:none;color:chartreuse}
+	a:hover{text-decoration:none;color:cyan}
+	a:active{text-decoration:none;color:darkOrange}
+	</style>
+</h:head>
+<h:body>
+    <h:form styleClass="login"><h:panelGrid >
+            <h:inputText id="username" value="#{membersBean.username}" a:placeholder="username"></h:inputText>
+            <h:inputSecret id="password" a:placeholder="password" value="#{membersBean.password}"></h:inputSecret> 
+            <h:commandButton id="sign"  value="Sign In" action="#{membersBean.loginControl()}" >
+                <f:param name="userName" value="#{membersBean.username}"/>
+            </h:commandButton>
+             <a href="sifremiUnuttum.xhtml" class="forgot" > forgot password? </a>
+
+        
+    </h:panelGrid></h:form>
+<p>Eğer hala üye değilseniz <a href= "uyeol.xhtml">üye ol</a> </p>
+</h:body>
+</html>
+
