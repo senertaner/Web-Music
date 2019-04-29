@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+   
+<h:head>
+<title>üyeol</title>
+	<style type="text/css">
+	body{ background-image:url("images/piyano2.jpg")
+	}
+	h1{ color:#0000f5;
+		
+		text-align:center;
+	}
+	p{ color:red;
+		font-weight:bold;
+		font-family:tahoma;
+		font-style:italic;
+		font-size:20px;
+		text-align:center;
+	}
+	.login {
+
+width:200px;
+margin:auto;
+border:1px #CCC solid;
+padding:10px;
+}
+
+input {
+padding:5px;
+margin:5px
+}
+	</style>
+</h:head>
+<h:body>
+<h1> KENDİ MÜZİK ARŞİVİNİZİ OLUŞTURMAK İÇİN ÜYE OLUN</h1>
+
+<f:view>
+    <h:form styleClass="login">
+         <h:panelGrid >
+             <h:inputText id="name" value="#{membersBean.name}" a:placeholder="name"/>
+            <h:inputText id="Surname" value="#{membersBean.surname}" a:placeholder="Surname"/>
+            <h:inputText id="username" value="#{membersBean.username}" a:placeholder="username"/>
+            <h:inputText id="mail" value="#{membersBean.EMail}" a:placeholder="Email"/>
+            <h:inputText  id="password" a:placeholder="password" value="#{membersBean.password}"/>
+          
+            <h:commandButton id="sign"  value="Sign In" action="#{membersBean.Add()}" />
+          
+    </h:panelGrid>
+    </h:form>
+</f:view>
+
+</h:body>
+</html>
+

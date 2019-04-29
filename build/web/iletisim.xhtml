@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+   <h:head>
+    <title>iletişim</title>
+    <style>
+	.fontColor { color:white;
+		text-transform:uppercase;
+		font-weight:bold;
+		
+	}
+        	#menu {
+  overflow: hidden;
+  background-color: #cc6666;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+	#menu ul {
+ margin: 0px;
+ padding: 0px;
+ list-style-type: none;
+ 
+}
+ #menu ul li a {
+ float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+#menu ul li a:hover {
+  background: #51dbdb;
+}
+    </style>
+    </h:head>
+    <h:body style="background-color: black">
+        <div id="menu">
+<ul>
+<li><a href="anasayfa.xhtml">Anasayfa</a></li>
+<li><a href="muziklerim.xhtml">Müziklerim</a></li>
+<li><a href="radio.html">Radyo</a></li>
+<li><a href="profil.xhtml">Profil</a></li>
+<li><a href="iletisim.xhtml">İletişim</a></li>
+<li><a href="hakkinda.html">Hakkında</a></li>
+</ul>
+     
+</div>
+        <br/>
+        <br/>
+        <br/>
+        <h:form>
+            
+       
+<table  border="0" bgcolor="gray" style="font-family:Thoma;" align="center" cellpadding="20" cellspacing="20">
+<tr style="color:white;margin-left:20px;">
+<th  colspan="2" scope="col" align="center" width="500px"> Site İletişim Formu </th>
+</tr>
+<tr>
+<td width="100px" >
+<font class="fontColor">
+NAME: </font>
+</td >
+<td width="400px">
+    <h:inputText a:placeholder="Name"  value="#{contacts.name}"/>
+</td>
+</tr>
+<tr>
+<td width="100px">
+<font class="fontColor">
+SURNAME:</font>
+</td>
+<td width="400px">
+    <h:inputText a:placeholder="Surname"  value="#{contacts.surname}"/>
+</td>
+</tr>
+<tr>
+<td width="100px">
+<font class="fontColor">
+    E-MAİL:</font></td>
+<td width="400px">
+    <h:inputText a:placeholder="E-Mail" value="#{contacts.EMail}"/>
+</td>
+</tr>
+<tr >
+<td width="100px">
+<font class="fontColor">
+COMMENT :</font>  </td>
+<td width="400px">
+    <h:inputTextarea value="#{contacts.yorum}" a:placeholder="You can write comment in this area." style="font-family:italic;"></h:inputTextarea>
+</td>
+</tr>
+<tr >
+<td colspan="2" align="center">
+    <h:commandButton value="GÖNDER" action="#{contacts.Add()}"/>&nbsp; <input type="reset" value="TEMİZLE"/>
+
+</td>
+</tr>
+
+</table>
+</h:form>
+
+</h:body>
+</html>
+

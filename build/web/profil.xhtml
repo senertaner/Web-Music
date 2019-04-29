@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      >
+  <h:head>
+<title>profilim</title>
+<link rel="stylesheet" type="text/css" href="styles/profil.css"/>
+<style>
+	.fontColor { color:white;
+		text-transform:uppercase;
+		font-weight:bold;
+		
+	}
+        #menu {
+  overflow: hidden;
+  background-color: #cc6666;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+	#menu ul {
+ margin: 0px;
+ padding: 0px;
+ list-style-type: none;
+ 
+}
+
+ #menu ul li a {
+ float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#menu ul li a:hover {
+  background: #51dbdb;
+
+}
+</style>
+
+</h:head>
+<h:body>
+<div id="menu">
+<ul>
+<li><a href="anasayfa.xhtml">Anasayfa</a></li>
+<li><a href="muziklerim.xhtml">Müziklerim</a></li>
+<li><a href="radio.html">Radyo</a></li>
+<li><a href="profil.xhtml">Profil</a></li>
+<li><a href="iletisim.xhtml">İletişim</a></li>
+<li><a href="hakkinda.html">Hakkında</a></li>
+</ul>
+</div>   
+    <br/><br/>
+<div>
+<pre style="margin-left:30%;">
+<h:form styleClass="fontColor">
+Adı:
+<h:inputText id="name" value="#{profilOnay.name}" a:placeholder="Name"/>
+Soyadı:
+
+<h:inputText id="surname" value="#{profilOnay.surname}" a:placeholder="Surname"></h:inputText>
+
+Kullanıcı Adı:
+<h:inputText id="username" value="#{profilOnay.username}" a:placeholder="Username"/>
+
+Mail Adresi:
+<h:inputText id="mail" value="#{profilOnay.mail}" a:placeholder="mail" />
+
+Yeni Şifre:
+<h:inputSecret id="password" value="#{profilOnay.password}" a:placeholder="password" ></h:inputSecret>
+
+Yeni Şifre Tekrar:
+<h:inputSecret id="repass" value="#{profilOnay.repass}" a:placeholder="repass"></h:inputSecret>
+<br/>
+<h:commandButton   value="Save" action="#{profilOnay.güncelle()}"/>
+
+  
+ 
+
+	
+	
+
+</h:form> 
+</pre>
+</div>
+    
+</h:body>
+</html>
+

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+  <h:head>
+<title>şifremi unuttum</title>
+	<style >
+	body{ background-image:url("images/piyano2.jpg")
+	}
+	h1{ color:#0000f5;
+		
+		text-align:center;
+	}
+	p{ color:red;
+		font-weight:bold;
+		font-family:tahoma;
+		font-style:italic;
+		font-size:20px;
+		text-align:center;
+	}
+	.login {
+
+width:200px;
+margin:auto;
+border:1px #CCC solid;
+padding:10px;
+}
+
+.login input {
+padding:5px;
+margin:5px
+}
+	</style>
+</h:head>
+<h:body> 
+    <f:view>
+        <h:form styleClass="login">
+            <h:panelGrid>
+                <h:inputText id="name" value="#{changePwd.name}" a:placeholder="name"/>
+                   <h:inputText id="Surname" value="#{changePwd.surname}" a:placeholder="Surname"></h:inputText>
+                   <h:inputText a:placeholder="Mail" id="mail" value="#{changePwd.email}"/> 
+<h:inputSecret a:placeholder="New Password" id="password" value="#{changePwd.password}"/> 
+<h:commandButton value="recreate"  action="#{changePwd.change()}"/>
+            </h:panelGrid>
+        </h:form>
+    </f:view>
+
+
+</h:body>
+</html>
+
