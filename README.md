@@ -2,8 +2,8 @@
 <hr>
 İstanbul Üniversitesi Bligisayar Mühendisliği Programming Application Proje Ödevi
 <br>
-<a href="https://github.com/senertaner"> Taner Şener </a>
-<a href="https://github.com/AlicanBen"> Ali Can Ben </a>
-Ayşegül Keleş
+<a href="https://github.com/senertaner"> Taner Şener </a><br>
+<a href="https://github.com/AlicanBen"> Ali Can Ben </a><br>
+Ayşegül Keleş<br>
 Semih Akturk
 <br>
